@@ -1,0 +1,141 @@
+openapi: 3.0.3
+
+info:
+  title: API de Relatórios Imobiliários
+  description: |
+    API REST desenvolvida para disponibilizar serviços de consulta e
+    processamento de dados de pagamentos e vendas de imóveis.
+
+    Os dados são obtidos do banco de dados e processados pela aplicação
+    utilizando técnicas de programação funcional.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: Servidor local de desenvolvimento
+
+paths:
+
+  /api/relatorios/pagamentos-por-imovel:
+    get:
+      summary: Pagamentos acumulados por imóvel
+      description: |
+        Retorna uma lista contendo cada imóvel e o valor acumulado
+        de todos os pagamentos registrados para ele.
+      tags:
+        - Relatórios
+
+      responses:
+        '200':
+          description: Lista de imóveis com seus respectivos valores acumulados.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    codigoImovel:
+                      type: integer
+                      example: 1001
+                    descricaoImovel:
+                      type: string
+                      example: Apartamento 80m2 em condomínio fechado
+                    valorAcumulado:
+                      type: number
+                      format: double
+                      example: 32200
+
+        '500':
+          description: Erro ao buscar os pagamentos acumulados por imóvel.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Erro ao buscar pagamentos acumulados por imóvel
+
+
+  /api/relatorios/vendas-por-mes:
+    get:
+      summary: Total de vendas por mês
+      description: |
+        Retorna uma lista contendo cada mês e ano disponíveis na série
+        histórica e o valor total dos pagamentos registrados naquele período.
+      tags:
+        - Relatórios
+
+      responses:
+        '200':
+          description: Lista contendo os valores totais por mês.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mes:
+                      type: string
+                      example: 2025-01
+                    valorTotal:
+                      type: number
+                      format: double
+                      example: 20500
+
+        '500':
+          description: Erro ao buscar as vendas por mês.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Erro ao buscar vendas por mês
+
+
+  /api/relatorios/vendas-por-tipo:
+    get:
+      summary: Valor das vendas por tipo de imóvel
+      description: |
+        Retorna uma lista contendo cada tipo de imóvel, o valor total
+        dos pagamentos relacionados ao tipo e o percentual correspondente
+        ao valor total de vendas.
+      tags:
+        - Relatórios
+
+      responses:
+        '200':
+          description: Lista contendo os valores e percentuais por tipo de imóvel.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    tipo:
+                      type: string
+                      example: Apartamento
+                    valorTotal:
+                      type: number
+                      format: double
+                      example: 62000
+                    percentual:
+                      type: number
+                      format: double
+                      example: 45.49
+
+        '500':
+          description: Erro ao buscar as vendas por tipo de imóvel.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Erro ao buscar vendas por tipo de imóvel
