@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trabalho Acadêmico — UNIVALI
 
-## Getting Started
+## Hands on Work VII
 
-First, run the development server:
+Projeto desenvolvido como parte das atividades acadêmicas da **Universidade do Vale do Itajaí (UNIVALI)**, na disciplina de **Hands on Work VII**.
+
+O projeto tem como objetivo aplicar, na prática, os conhecimentos relacionados ao desenvolvimento de aplicações web, utilizando tecnologias modernas para construção do sistema.
+
+---
+
+## Tecnologias utilizadas
+
+* **Next.js**
+* **React**
+* **TypeScript**
+* **Node.js**
+
+---
+
+## Como executar o projeto
+
+Primeiro, instale as dependências:
+
+```bash
+npm install
+```
+
+Depois, execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+```
+
+Também é possível utilizar:
+
+```bash
 yarn dev
-# or
+```
+
+ou:
+
+```bash
 pnpm dev
-# or
+```
+
+ou:
+
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Após iniciar o projeto, acesse no navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**http://localhost:3000**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Estrutura do projeto
 
-To learn more about Next.js, take a look at the following resources:
+O projeto utiliza a estrutura do **Next.js**, com as páginas e componentes organizados de acordo com a arquitetura da aplicação.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Durante o desenvolvimento, os arquivos podem ser editados e as alterações são atualizadas automaticamente pelo servidor de desenvolvimento.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Objetivo acadêmico
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este repositório foi criado para armazenar e apresentar o desenvolvimento do projeto realizado para a **UNIVALI**, servindo como parte da entrega e documentação das atividades propostas na disciplina.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O código-fonte e os demais materiais relacionados ao trabalho estão disponibilizados neste repositório para fins **acadêmicos e educacionais**.
+
+---
+
+## Universidade
+
+**Universidade do Vale do Itajaí — UNIVALI**
+
+**Disciplina:** Hands on Work VII
+
+**Projeto:** Trabalho Acadêmico
+
+---
+
+## Referências
+
+* [Next.js](https://nextjs.org) — Framework utilizado no desenvolvimento da aplicação.
+* [React](https://react.dev) — Biblioteca utilizada para construção da interface.
+* [TypeScript](https://www.typescriptlang.org) — Linguagem utilizada no desenvolvimento.
+* [Node.js](https://nodejs.org) — Ambiente de execução utilizado no projeto.
