@@ -5,10 +5,13 @@ export async function vendasPorTipoUseCase() {
 
   const pagamentos = await repository.findAll();
 
+  // Programação funcional: reduce() percorre os pagamentos,
+  // agrupa por tipo de imóvel e acumula os valores.
   const vendasPorTipo = pagamentos.reduce(
     (acumulado, pagamento) => {
       const tipo = pagamento.imovel.tipo_imovel.descricao;
 
+      // Cria o registro do tipo caso ainda não exista.
       if (!acumulado[tipo]) {
         acumulado[tipo] = {
           tipo,
@@ -16,6 +19,7 @@ export async function vendasPorTipoUseCase() {
         };
       }
 
+      // Soma o valor do pagamento ao total daquele tipo.
       acumulado[tipo].valorTotal += Number(
         pagamento.valor_do_pagamento
       );
@@ -31,13 +35,18 @@ export async function vendasPorTipoUseCase() {
     >
   );
 
+  // Converte o objeto agrupado em uma lista.
   const resultados = Object.values(vendasPorTipo);
 
+  // Programação funcional: reduce() calcula o valor total
+  // de todos os tipos de imóveis.
   const valorTotalGeral = resultados.reduce(
     (total, item) => total + item.valorTotal,
     0
   );
 
+  // Programação funcional: map() percorre os resultados
+  // e cria o resultado final, incluindo o percentual.
   return resultados.map((item) => ({
     tipo: item.tipo,
     valorTotal: item.valorTotal,
